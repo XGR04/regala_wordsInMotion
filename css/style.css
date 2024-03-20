@@ -1,23 +1,69 @@
-/* Page 1 Styles */
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: auto;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.poem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.sentences {
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    color: white;
-    background-color: #333;
-    font-family: 'Helvetica Neue', sans-serif;
-}
-.container {
-    width: 90%;
     text-align: center;
+    transition: background-color 0.5s ease-in-out;
+    color: #fff;
 }
-.word {
+
+#pt1 { background-color: #3498db; }
+#pt2 { background-color: #9b59b6; }
+#pt3 { background-color: #e74c3c; }
+#pt4 { background-color: #2ecc71; }
+#pt5 { background-color: #f1c40f; }
+#pt6 { background-color: #e67e22; }
+#pt7 { background-color: #1abc9c; }
+#pt8 { background-color: #34495e; }
+
+.sentences p {
+    font-size: 24px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.animated-word {
     display: inline-block;
-    font-size: 2rem;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-in-out;
 }
-.word:hover {
-    transform: scale(1.2);
+
+.animated-word:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+@media (max-width: 768px) {
+    .sentences p {
+        font-size: 20px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sentences p {
+        font-size: 16px;
+        padding: 10px;
+    }
 }
