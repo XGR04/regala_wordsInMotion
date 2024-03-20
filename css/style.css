@@ -1,0 +1,23 @@
+/* Page 1 Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    background-color: #333;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+.container {
+    width: 90%;
+    text-align: center;
+}
+.word {
+    display: inline-block;
+    font-size: 2rem;
+    transition: transform 0.5s;
+}
+.word:hover {
+    transform: scale(1.2);
+}
