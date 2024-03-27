@@ -1,14 +1,30 @@
+/*
+.calligraffitti { font-family: 'Calligraffitti', cursive; }
+.quattrocento { font-family: 'Quattrocento', serif; }
+.bangers { font-family: 'Bangers', cursive; }
+.faster-one { font-family: 'Faster One', cursive; }
+.klee-one { font-family: 'Klee One', cursive; }
+.swanky-and-moo-moo { font-family: 'Swanky and Moo Moo', cursive; }
+.impact { font-family: 'Impact', sans-serif; }
+.amatic-sc { font-family: 'Amatic SC', cursive; }
+.oswald { font-family: 'Oswald', sans-serif; }
+.finger-paint { font-family: 'Finger Paint', cursive; }
+.dokdo { font-family: 'Dokdo', cursive; }
+.homemade-apple { font-family: 'Homemade Apple', cursive; }
+*/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
+body {
     width: 100%;
     height: auto;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Quattrocento', serif; 
     scroll-behavior: smooth;
+    background-color: #f0eae0;
 }
 
 .poem {
@@ -25,45 +41,39 @@ html, body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: background-color 0.5s ease-in-out;
-    color: #fff;
+    transition: background-color 5s ease-in-out;
+    color: transparent;
+    font-size: 0;
 }
 
-#pt1 { background-color: #3498db; }
-#pt2 { background-color: #9b59b6; }
-#pt3 { background-color: #e74c3c; }
-#pt4 { background-color: #2ecc71; }
-#pt5 { background-color: #f1c40f; }
-#pt6 { background-color: #e67e22; }
-#pt7 { background-color: #1abc9c; }
-#pt8 { background-color: #34495e; }
+.sentences:hover {
+    color: #6a6c6f;
+    font-size: 32px;
+    transition: color 0.5s ease, font-size 0.5s ease;
+    animation: fadeIn 5s forwards;
+}
 
-.sentences p {
-    font-size: 24px;
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .animated-word {
+    cursor: pointer;
     display: inline-block;
-    transition: transform 0.5s ease-in-out;
+    opacity: 0; 
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.animated-word:hover {
-    transform: scale(1.2) rotate(10deg);
+.sentences:hover .animated-word {
+    opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .sentences p {
-        font-size: 20px;
-        padding: 15px;
-    }
+@keyframes rotateAndScale {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(180deg); }
+    100% { transform: scale(1) rotate(360deg); }
 }
 
-@media (max-width: 480px) {
-    .sentences p {
-        font-size: 16px;
-        padding: 10px;
-    }
-}
+.aw1 { font-family: 'Calligraffitti', cursive; }
+.aw2 { font-family: 'Bangers', cursive; }
