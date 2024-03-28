@@ -97,7 +97,7 @@ body {
 .aw18 { font-family: 'Cabin Sketch', cursive; }
 .aw21 { font-family: 'Homemade Apple', cursive; }
 
-/* Adding more hover effects for aw classes */
+/* Adding  more hover effects for aw classes */
 .aw16:hover, .aw18:hover, .aw21:hover {
     transform: rotate(-5deg);
 }
