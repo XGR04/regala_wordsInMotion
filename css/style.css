@@ -5,7 +5,7 @@
 }
 
 body {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     font-family: 'Quattrocento', serif;
     scroll-behavior: smooth;
@@ -17,29 +17,35 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    overflow-y: auto;
 }
 
 .sentences {
     min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 15px;
+    width: 50vw;
+    margin: 5vh auto 30px;
     padding: 30px;
-    margin: 30px;
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .sentences:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease forwards;
 }
 
 .sentences p {
+    transition: opacity 2s ease, transform 0.5s ease;
+    animation-name: fadeIn;
+    animation-delay: 0s;
+    animation-direction: forwards;
+    animation-duration: 2s;
+    animation-fill-mode:forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
     transition: opacity 2s ease, transform 0.5s ease;
 }
 
@@ -55,49 +61,49 @@ body {
     transform: translateY(-5px);
 }
 
-.aw1:hover { font-family: 'Calligraffitti', cursive; }
-.aw2:hover { 
-    font-family: 'Bangers', cursive;
-    transform: scale(1.1);
-}
 
-.aw3:hover { 
-    font-family: 'Faster One', cursive;
+/*.aw1:hover { 
+
+}
+.aw2:hover { 
+
+}
+.aw3:hover {
     animation: shake 0.5s ease infinite;
 }
+.aw4:hover, .aw8:hover, .aw17:hover { }
+.aw5 { 
+    transform: scale(.05);
+    transition: transform 1s linear; 
+}
+.aw6:hover, .aw19:hover {  }
+.aw9:hover, .aw10:hover, .aw13:hover {  }
+.aw15:hover, .aw20:hover {  }
+.aw16:hover, .aw18:hover, .aw21:hover { }
+*/
+
+.aw1 { font-family: 'Calligraffitti', cursive; }
+.aw2 { font-family: 'Bangers', cursive; transform: scale(1.1); }
+.aw3 { font-family: 'Faster One', cursive; }
+.aw4, .aw8, .aw17 { font-family: 'Klee One', cursive; }
+.aw5 { font-family: 'Swanky and Moo Moo', cursive; }
+.aw6, .aw19 { font-family: 'Impact', sans-serif; }
+.aw9, .aw10, .aw13 { font-family: 'Oswald', sans-serif; }
+.aw15, .aw20 { font-family: 'Finger Paint', cursive; }
+.aw16 { font-family: 'Dokdo', cursive; }
+.aw18 { font-family: 'Cabin Sketch', cursive; }
+.aw21 { font-family: 'Homemade Apple', cursive; }
 
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(-10px); }
 }
 
-.aw4, .aw8, .aw17 { font-family: 'Klee One', cursive; }
-.aw4:hover, .aw8:hover, .aw17:hover {
-    font-size: 1.1em;
-    color: #6a8caf;
-}
-
-.aw5 { font-family: 'Swanky and Moo Moo', cursive; }
-.aw6, .aw19 { font-family: 'Impact', sans-serif; }
-.aw6:hover, .aw19:hover {
-    font-style: italic;
-}
-
-.aw9, .aw10, .aw13 { font-family: 'Oswald', sans-serif; }
-.aw9:hover, .aw10:hover, .aw13:hover {
-    letter-spacing: 1px;
-}
-
-.aw15, .aw20 { font-family: 'Finger Paint', cursive; }
-.aw15:hover, .aw20:hover {
-    text-shadow: 2px 2px 4px #aaa;
-}
-
-.aw16 { font-family: 'Dokdo', cursive; }
-.aw18 { font-family: 'Cabin Sketch', cursive; }
-.aw21 { font-family: 'Homemade Apple', cursive; }
-
-/* Adding  more hover effects for aw classes */
-.aw16:hover, .aw18:hover, .aw21:hover {
-    transform: rotate(-5deg);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
