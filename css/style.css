@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 25px;
+}
+
 body {
     max-width: 100%;
     height: auto;
@@ -50,7 +54,7 @@ body {
 }
 
 .sentences span {
-    font-size: 25px;
+    font-size: 40px;
     color: transparent;
     transition: color 0.5s ease, transform 0.5s ease;
     display: inline-block;
@@ -63,30 +67,63 @@ body {
 
 
 /*.aw1:hover { 
-
+    animation: spreadOut 2s ease forwards;
 }
 .aw2:hover { 
-
+    transform: scale(1.1);
+    display: inline-block;
+    animation: shake 0.5s infinite;
 }
 .aw3:hover {
-    animation: shake 0.5s ease infinite;
+    animation: speed 0.5s ease infinite;
 }
-.aw4:hover, .aw8:hover, .aw17:hover { }
+.aw4:hover {
+    transform-origin: bottom center;
+    animation: spreadOut 2s ease forwards;
+}
+.aw5:hover {
+    transition: transform 0.5s ease;
+    transform: scale(0.8);
+}
+.aw8:hover { }
+
+.aw17:hover { }
+
 .aw5 { 
     transform: scale(.05);
     transition: transform 1s linear; 
 }
-.aw6:hover, .aw19:hover {  }
-.aw9:hover, .aw10:hover, .aw13:hover {  }
-.aw15:hover, .aw20:hover {  }
-.aw16:hover, .aw18:hover, .aw21:hover { }
+.aw6:hover { }
+.aw19:hover {  
+
+}
+.aw9:hover { }
+.aw10:hover { }
+.aw13:hover {  
+
+}
+.aw15:hover { }
+.aw20:hover {  
+
+}
+.aw16:hover { }
+.aw18:hover { }
+.aw21:hover { 
+
+}
 */
 
-.aw1 { font-family: 'Calligraffitti', cursive; }
+.aw1 { 
+    font-family: 'Calligraffitti', cursive; 
+    display: inline-block;
+}
 .aw2 { font-family: 'Bangers', cursive; transform: scale(1.1); }
 .aw3 { font-family: 'Faster One', cursive; }
 .aw4, .aw8, .aw17 { font-family: 'Klee One', cursive; }
-.aw5 { font-family: 'Swanky and Moo Moo', cursive; }
+.aw5 { 
+    font-family: 'Swanky and Moo Moo', cursive; 
+    display: inline-block;
+}
 .aw6, .aw19 { font-family: 'Impact', sans-serif; }
 .aw9, .aw10, .aw13 { font-family: 'Oswald', sans-serif; }
 .aw15, .aw20 { font-family: 'Finger Paint', cursive; }
@@ -94,16 +131,18 @@ body {
 .aw18 { font-family: 'Cabin Sketch', cursive; }
 .aw21 { font-family: 'Homemade Apple', cursive; }
 
-@keyframes shake {
+@keyframes speed {
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(-10px); }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+@keyframes spreadOut {
+    from { letter-spacing: normal; } 
+    to { letter-spacing: 10px; } 
+  }
+
+@keyframes shake {
+    0%, 100% { transform: translate(0, 0) scale(1.1); }
+    10%, 30%, 50%, 70%, 90% { transform: translate(-5px, -5px) scale(1.1); }
+    20%, 40%, 60%, 80% { transform: translate(5px, 5px) scale(1.1); }
 }
