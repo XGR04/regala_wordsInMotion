@@ -6,7 +6,7 @@ My project, "Desiderata: Echoes of Resilience and Hope," draws from Max Ehrmann'
 
 # Technical Overview
 The digital presentation of "Desiderata" is achieved through the use of HTML, CSS, and JavaScript. HTML structures the poem into sections, each designed for specific animations, while CSS is used to apply various font styles to emphasize key words, enhancing their meaning and impact. Animations and hover effects in CSS symbolize the poem's themes of movement and change. The development environment for this project was Visual Studio Code, and it is hosted on GitHub Pages, ensuring accessibility and visibility. The integration of these technologies and platforms allows for a seamless and engaging user experience, reflecting the poem's message through the medium of web design.
-<h2>Font Links</h2>
+<h3>Font Links</h3>
 Calligraffitti by Open Font Library
 https://fonts.google.com/specimen/Calligraffitti
 
@@ -24,9 +24,6 @@ https://fonts.google.com/specimen/Klee+One
 
 Swanky and Moo Moo by Brittney Murphy
 https://fonts.google.com/specimen/Swanky+and+Moo+Moo
-
-Impact (Typically a system font)
-Note: Impact is a system font, so it might not have a specific designer listed or require acknowledgment via Google Fonts.
 
 Amatic SC by Vernon Adams, Ben Nathan, Thomas Jockin
 https://fonts.google.com/specimen/Amatic+SC
