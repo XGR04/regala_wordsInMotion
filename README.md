@@ -6,7 +6,7 @@ My project, "Desiderata: Echoes of Resilience and Hope," draws from Max Ehrmann'
 
 # Technical Overview
 The digital presentation of "Desiderata" is achieved through the use of HTML, CSS, and JavaScript. HTML structures the poem into sections, each designed for specific animations, while CSS is used to apply various font styles to emphasize key words, enhancing their meaning and impact. Animations and hover effects in CSS symbolize the poem's themes of movement and change. The development environment for this project was Visual Studio Code, and it is hosted on GitHub Pages, ensuring accessibility and visibility. The integration of these technologies and platforms allows for a seamless and engaging user experience, reflecting the poem's message through the medium of web design.
-<h3>Font Links</h3>
+<h3>Fonts</h3>
 Calligraffitti by Open Font Library
 https://fonts.google.com/specimen/Calligraffitti
 
