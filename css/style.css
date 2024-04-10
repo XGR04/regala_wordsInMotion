@@ -21,7 +21,6 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    overflow-y: auto;
 }
 
 .sentences {
@@ -31,33 +30,22 @@ body {
     padding: 30px;
     border-radius: 15px;
     text-align: center;
-    align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
 }
 
 .sentences:hover {
-    animation: fadeIn 2s ease forwards;
 }
 
 .sentences p {
     transition: opacity 2s ease, transform 0.5s ease;
-    animation-name: fadeIn;
-    animation-delay: 0s;
-    animation-direction: forwards;
-    animation-duration: 2s;
-    animation-fill-mode:forwards;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-    transition: opacity 2s ease, transform 0.5s ease;
+    margin-bottom: 20px;
 }
 
 .sentences span {
     font-size: 40px;
-    color: transparent;
     transition: color 0.5s ease, transform 0.5s ease;
-    display: inline-block;
 }
 
 .sentences:hover span {
@@ -75,8 +63,10 @@ body {
     animation: shake 0.5s infinite;
 }
 .aw3:hover {
-    animation: speed 0.5s ease infinite;
+    transition: transform 0.5s ease;
+    animation: slideIn 2s forwards; 
 }
+
 .aw4:hover {
     transform-origin: bottom center;
     animation: spreadOut 2s ease forwards;
@@ -113,12 +103,24 @@ body {
 }
 */
 
+
 .aw1 { 
     font-family: 'Calligraffitti', cursive; 
     display: inline-block;
 }
-.aw2 { font-family: 'Bangers', cursive; transform: scale(1.1); }
-.aw3 { font-family: 'Faster One', cursive; }
+.aw2 { 
+    font-family: 'Bangers', cursive; 
+    transform: scale(1.1); 
+}
+.aw3 { 
+    font-family: 'Faster One', cursive;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    transform: translateX(-100vw);
+    transition: transform 0.5s ease;
+    animation: slideIn 2s forwards; 
+}
 .aw4, .aw8, .aw17 { font-family: 'Klee One', cursive; }
 .aw5 { 
     font-family: 'Swanky and Moo Moo', cursive; 
@@ -145,4 +147,31 @@ body {
     0%, 100% { transform: translate(0, 0) scale(1.1); }
     10%, 30%, 50%, 70%, 90% { transform: translate(-5px, -5px) scale(1.1); }
     20%, 40%, 60%, 80% { transform: translate(5px, 5px) scale(1.1); }
+} 
+
+@keyframes slideIn {
+    from { transform: translateX(-100vw); }
+    to { transform: translateX(0); }
 }
+
+/*.aw3:hover {
+    animation: speed 0.5s ease infinite;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: speed 0.5s ease forwards;
+}
+
+.aw3:hover .letter {
+    animation-name: comeIn;
+}
+
+.aw3:hover .letter:nth-child(1) { animation-delay: 0s; }
+.aw3:hover .letter:nth-child(2) { animation-delay: 0.1s; }
+.aw3:hover .letter:nth-child(3) { animation-delay: 0.2s; }
+.aw3:hover .letter:nth-child(4) { animation-delay: 0.3s; }
+.aw3:hover .letter:nth-child(5) { animation-delay: 0.4s; }
+*/
