@@ -35,12 +35,9 @@ body {
     flex-direction: column;
 }
 
-.sentences:hover {
-}
-
 .sentences p {
     transition: opacity 2s ease, transform 0.5s ease;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
 }
 
 .sentences span {
@@ -54,17 +51,29 @@ body {
 }
 
 
-/*.aw1:hover { 
+.aw1:hover { 
     animation: spreadOut 2s ease forwards;
 }
 .aw2:hover { 
-    transform: scale(1.1);
+    transform: scale(5.5);
     display: inline-block;
     animation: shake 0.5s infinite;
 }
-.aw3:hover {
-    transition: transform 0.5s ease;
-    animation: slideIn 2s forwards; 
+
+.aw3 .h, .aw3 .a, .aw3 .s, .aw3 .t, .aw3 .e {
+    display: inline-block;
+    position: relative;
+    animation: trickleDown 3s forwards;
+    animation-delay: 2s;
+    animation-play-state: paused;
+}
+
+.aw3:hover .h, 
+.aw3:hover .a, 
+.aw3:hover .s, 
+.aw3:hover .t, 
+.aw3:hover .e {
+    animation-play-state: running; 
 }
 
 .aw4:hover {
@@ -101,7 +110,7 @@ body {
 .aw21:hover { 
 
 }
-*/
+
 
 
 .aw1 { 
@@ -110,7 +119,7 @@ body {
 }
 .aw2 { 
     font-family: 'Bangers', cursive; 
-    transform: scale(1.1); 
+    transform: scale(5.5); 
 }
 .aw3 { 
     font-family: 'Faster One', cursive;
@@ -152,6 +161,14 @@ body {
 @keyframes slideIn {
     from { transform: translateX(-100vw); }
     to { transform: translateX(0); }
+}
+
+@keyframes trickleDown {
+    0%, 20% { transform: translateY(0); }
+    40% { transform: translate(10vw, 20vh); }
+    60% { transform: translate(-10vw, 40vh); }
+    80% { transform: translate(10vw, 60vh); }
+    100% { transform: translate(-10vw, 80vh); }
 }
 
 /*.aw3:hover {
