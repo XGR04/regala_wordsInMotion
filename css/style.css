@@ -51,9 +51,19 @@ body {
 }
 
 
-.aw1:hover { 
+.aw1:hover span {
     animation: spreadOut 2s ease forwards;
 }
+
+.aw1 span:nth-child(1) { animation-delay: 0s; }
+.aw1 span:nth-child(2) { animation-delay: 0.2s; }
+.aw1 span:nth-child(3) { animation-delay: 0.4s; }
+.aw1 span:nth-child(4) { animation-delay: 0.6s; }
+.aw1 span:nth-child(5) { animation-delay: 0.8s; }
+.aw1 span:nth-child(6) { animation-delay: 1s; }
+.aw1 span:nth-child(7) { animation-delay: 1.2s; }
+.aw1 span:nth-child(8) { animation-delay: 1.4s; }
+
 .aw2:hover { 
     transform: scale(5.5);
     display: inline-block;
@@ -74,6 +84,11 @@ body {
 .aw3:hover .t, 
 .aw3:hover .e {
     animation-play-state: running; 
+    overflow: hidden;
+    position: relative;
+    transform: translateX(-100vw);
+    transition: transform 0.5s ease;
+    animation: slideIn 2s forwards; 
 }
 
 .aw4:hover {
@@ -84,39 +99,49 @@ body {
     transition: transform 0.5s ease;
     transform: scale(0.8);
 }
-.aw8:hover { }
 
-.aw17:hover { }
-
-.aw5 { 
-    transform: scale(.05);
-    transition: transform 1s linear; 
-}
-.aw6:hover { }
-.aw19:hover {  
-
-}
-.aw9:hover { }
-.aw10:hover { }
-.aw13:hover {  
-
-}
-.aw15:hover { }
-.aw20:hover {  
-
-}
-.aw16:hover { }
-.aw18:hover { }
-.aw21:hover { 
-
+.aw6:hover, .aw19:hover {
+    animation: pulse 1s infinite;
 }
 
+.aw8:hover, .aw17:hover {
+    animation: glow 1.5s ease-in-out infinite;
+}
+
+.aw9:hover, .aw10:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+.aw13:hover {
+    transform: rotate(5deg);
+    transition: transform 0.5s ease;
+}
+
+.aw15:hover, .aw20:hover {
+    animation: float 3s ease-in-out infinite;
+}
+
+.aw16:hover {
+    transform: rotate(-5deg);
+    transition: transform 0.5s ease;
+}
+
+.aw18:hover, .aw21:hover {
+    transform: skewX(10deg);
+    transition: transform 0.5s ease;
+}
 
 
-.aw1 { 
+
+.aw1 span {
     font-family: 'Calligraffitti', cursive; 
     display: inline-block;
+    transform: translateY(0) scale(1);
+    transition: transform 0.3s ease;
+    margin: 0 4px;
 }
+
 .aw2 { 
     font-family: 'Bangers', cursive; 
     transform: scale(5.5); 
@@ -124,17 +149,13 @@ body {
 .aw3 { 
     font-family: 'Faster One', cursive;
     display: inline-block;
-    overflow: hidden;
-    position: relative;
-    transform: translateX(-100vw);
-    transition: transform 0.5s ease;
-    animation: slideIn 2s forwards; 
 }
 .aw4, .aw8, .aw17 { font-family: 'Klee One', cursive; }
 .aw5 { 
     font-family: 'Swanky and Moo Moo', cursive; 
     display: inline-block;
 }
+
 .aw6, .aw19 { font-family: 'Impact', sans-serif; }
 .aw9, .aw10, .aw13 { font-family: 'Oswald', sans-serif; }
 .aw15, .aw20 { font-family: 'Finger Paint', cursive; }
@@ -148,13 +169,13 @@ body {
 }
 
 @keyframes spreadOut {
-    from { letter-spacing: normal; } 
-    to { letter-spacing: 10px; } 
-  }
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.5); }
+}
 
 @keyframes shake {
-    0%, 100% { transform: translate(0, 0) scale(1.1); }
-    10%, 30%, 50%, 70%, 90% { transform: translate(-5px, -5px) scale(1.1); }
+    0%, 100% { transform: translate(0, 0) scale(5.5); }
+    10%, 30%, 50%, 70%, 90% { transform: translate(-5px, -5px) scale(5.5); }
     20%, 40%, 60%, 80% { transform: translate(5px, 5px) scale(1.1); }
 } 
 
@@ -163,32 +184,18 @@ body {
     to { transform: translateX(0); }
 }
 
-@keyframes trickleDown {
-    0%, 20% { transform: translateY(0); }
-    40% { transform: translate(10vw, 20vh); }
-    60% { transform: translate(-10vw, 40vh); }
-    80% { transform: translate(10vw, 60vh); }
-    100% { transform: translate(-10vw, 80vh); }
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
-/*.aw3:hover {
-    animation: speed 0.5s ease infinite;
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
-.letter {
-    display: inline-block;
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: speed 0.5s ease forwards;
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 5px #394862, 0 0 10px #394862; }
+    50% { text-shadow: 0 0 20px #8a9ba8, 0 0 30px #8a9ba8; }
 }
-
-.aw3:hover .letter {
-    animation-name: comeIn;
-}
-
-.aw3:hover .letter:nth-child(1) { animation-delay: 0s; }
-.aw3:hover .letter:nth-child(2) { animation-delay: 0.1s; }
-.aw3:hover .letter:nth-child(3) { animation-delay: 0.2s; }
-.aw3:hover .letter:nth-child(4) { animation-delay: 0.3s; }
-.aw3:hover .letter:nth-child(5) { animation-delay: 0.4s; }
-*/
