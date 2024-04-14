@@ -36,7 +36,7 @@ body {
     font-family: 'Klee One', cursive;
     font-size: 4em;
     font-weight: bold;
-    text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+    text-shadow: 3px 3px 0px #00000080;
     margin-bottom: 0.5em;
 }
 
@@ -178,6 +178,7 @@ body {
     font-family: 'Bangers', cursive; 
     transform: scale(5.5); 
 }
+
 .aw3 { 
     font-family: 'Faster One', cursive;
     display: inline-block;
@@ -187,7 +188,6 @@ body {
     display: inline-block;
     position: relative;
     cursor: pointer;
-    animation: trickleDown 3s forwards paused;
 }
 
 .aw3 .h, .aw3 .a, .aw3 .s, .aw3 .t, .aw3 .e {
@@ -217,33 +217,14 @@ body {
 .aw3.clicked .s, 
 .aw3.clicked .t, 
 .aw3.clicked .e {
-    animation: pulsate 0.5s ease-in-out infinite alternate, sideToSide 0.5s ease-in-out infinite alternate !important;
+    animation: sideToSideDownward 0.5s ease-in-out infinite alternate;
 }
-
-.aw3:hover span {
-    animation-play-state: running; 
-    overflow: hidden;
-    transform: translateX(-100vw);
-    transition: transform 0.5s ease;
-    animation: slideIn 2s forwards; 
-}
-
 .aw3.clicked span {
-    animation: sideToSideDownward 0.5s ease-in-out forwards;
-}
-
-.aw3.activatable span {
-    cursor: pointer;
-    transition: color 0.5s ease;
-    color: #000; 
-}
-
-.aw3.activatable:hover span {
-    color: #ff4500;
-}
-
-.aw3.activatable.clicked span {
     animation: sideToSideDownward 2s ease-in-out forwards;
+}
+.aw3:hover span {
+    animation: slideIn 2s forwards; 
+    transition: transform 0.5s ease, color 0.5s ease 1.5s; 
 }
 
 .aw4, .aw8, .aw17 { font-family: 'Klee One', cursive; }
@@ -312,8 +293,22 @@ body {
 
 @keyframes sideToSideDownward {
     0% { transform: translate(0, 0); }
-    25% { transform: translate(10px, 50px); }
-    50% { transform: translate(-10px, 100px); }
-    75% { transform: translate(10px, 150px); }  
-    100% { transform: translate(0, 200px); }
+    25% { transform: translate(20px, 100px); } 
+    50% { transform: translate(-20px, 200px); } 
+    75% { transform: translate(20px, 300px); }
+    100% { transform: translate(0, 400px); }
+}
+
+@keyframes slideIn {
+    0% { 
+        transform: translateX(-100vw); 
+        color: initial; 
+    }
+    90% {
+        transform: translateX(0);
+    }
+    100% { 
+        transform: translateX(0);
+        color: #804c98;
+    }
 }

@@ -86,7 +86,8 @@
             <p>it is still a <span class="aw21">beautiful world</span>.</p>
         </section>
     </div>
-    <script>
+
+<script>
 document.getElementById('trigger-desiderata').addEventListener('click', function() {
     const poem = document.querySelector('.poem');
     const scrollInterval = setInterval(function() {
@@ -100,26 +101,7 @@ document.getElementById('trigger-desiderata').addEventListener('click', function
         } else {
             window.scrollBy(0, increment);
         }
-    }, 20); 
-});
-
-document.getElementById('animate-haste').addEventListener('click', function() {
-    if (this.classList.contains('activatable')) { 
-        if (!this.classList.contains('clicked')) {
-            this.classList.add('clicked');
-            this.querySelectorAll('span').forEach(span => {
-                span.style.animation = 'sideToSideDownward 2s ease-in-out forwards';
-            });
-        } else {
-            this.classList.remove('clicked'); 
-            this.querySelectorAll('span').forEach(span => {
-                span.style.animation = 'none';
-                setTimeout(() => {
-                    span.style.animation = ''; 
-                }, 10);
-            });
-        }
-    }
+    }, 20);
 });
 
 document.getElementById('animate-haste').addEventListener('mouseover', function() {
@@ -127,14 +109,17 @@ document.getElementById('animate-haste').addEventListener('mouseover', function(
 });
 
 document.getElementById('animate-haste').addEventListener('click', function() {
-    this.classList.toggle('clicked');
-    if (this.classList.contains('clicked')) {
+    if (this.classList.contains('activatable')) {
+        this.classList.toggle('clicked');
         this.querySelectorAll('span').forEach(span => {
-            span.classList.add('animate');
-        });
-    } else {
-        this.querySelectorAll('span').forEach(span => {
-            span.classList.remove('animate');
+            if (this.classList.contains('clicked')) {
+                span.style.animation = 'sideToSideDownward 2s ease-in-out forwards';
+            } else {
+                span.style.animation = 'none';
+                setTimeout(() => {
+                    span.style.animation = ''; 
+                }, 10);
+            }
         });
     }
 });
