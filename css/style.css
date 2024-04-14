@@ -227,7 +227,50 @@ body {
     transition: transform 0.5s ease, color 0.5s ease 1.5s; 
 }
 
-.aw4 { font-family: 'Klee One', cursive; }
+.aw4 {
+    font-family: 'Klee One', cursive;
+    display: inline-block; /* Allows the span to be inline but styled */
+    cursor: pointer; /* Shows an interactive cursor on hover */
+}
+
+.aw4 span {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.5s ease, color 0.5s ease, text-shadow 0.5s ease; /* Smooth transitions for movement, color, and shadow */
+    color: black;
+    text-shadow: none;
+}
+
+.aw4:hover .p {
+    transform: translate(-60px, 20px);
+    color: #e5e568; 
+    text-shadow: 0 0 10px #eaea9b; 
+}
+
+.aw4:hover .e1 {
+    transform: translate(-30px, -10px);
+    color: #e5e568; 
+    text-shadow: 0 0 10px #eaea9b; 
+}
+
+.aw4:hover .a {
+    transform: translate(0, -40px);
+    color: #e5e568; 
+    text-shadow: 0 0 10px #eaea9b; 
+}
+
+.aw4:hover .c {
+    transform: translate(30px, -10px);
+    color: #e5e568; 
+    text-shadow: 0 0 10px #eaea9b; 
+}
+
+.aw4:hover .e2 {
+    transform: translate(60px, 20px);
+    color: #e5e568; 
+    text-shadow: 0 0 10px #eaea9b; 
+}
+
 .aw8
 .aw17 { font-family: 'Klee One', cursive; }
 .aw5 { 
@@ -313,4 +356,24 @@ body {
         transform: translateX(0);
         color: #804c98;
     }
+}
+
+@keyframes moveE1 {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-30px, -10px); }
+}
+
+@keyframes moveA {
+    from { transform: translate(0, 0); }
+    to { transform: translate(0, -40px); }
+}
+
+@keyframes moveC {
+    from { transform: translate(0, 0); }
+    to { transform: translate(30px, -10px); }
+}
+
+@keyframes moveE2 {
+    from { transform: translate(0, 0); }
+    to { transform: translate(60px, 20px); }
 }
