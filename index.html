@@ -18,7 +18,13 @@
         <link href="https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap" rel="stylesheet">
     </head>
-<body>
+
+<body>      
+    <div class="cover-page">
+        <h1 class="clickable-title" id="trigger-desiderata">Desiderata</h1>     
+        <p>by Max Ehrmann, 1927</p>
+        <p class="subheading">A Visual Poem</p>
+    </div>
     <div class="poem">
         <section class="sentences" id="pt1">
             <p>Go 
@@ -28,7 +34,7 @@
             </p>
             <p>amid the <span class="aw2">noise</span></p>
             <p>and the
-                <span class="aw3">
+                <span class="aw3" id="animate-haste">
                 <span class="h">h</span>
                 <span class="a">a</span>
                 <span class="s">s</span>
@@ -80,5 +86,59 @@
             <p>it is still a <span class="aw21">beautiful world</span>.</p>
         </section>
     </div>
+    <script>
+document.getElementById('trigger-desiderata').addEventListener('click', function() {
+    const poem = document.querySelector('.poem');
+    const scrollInterval = setInterval(function() {
+        const position = window.pageYOffset;
+        const distance = poem.offsetTop - position;
+        const increment = distance / 20;
+
+        if (Math.abs(distance) < 1) {
+            window.scrollTo(0, poem.offsetTop);
+            clearInterval(scrollInterval);
+        } else {
+            window.scrollBy(0, increment);
+        }
+    }, 20); 
+});
+
+document.getElementById('animate-haste').addEventListener('click', function() {
+    if (this.classList.contains('activatable')) { 
+        if (!this.classList.contains('clicked')) {
+            this.classList.add('clicked');
+            this.querySelectorAll('span').forEach(span => {
+                span.style.animation = 'sideToSideDownward 2s ease-in-out forwards';
+            });
+        } else {
+            this.classList.remove('clicked'); 
+            this.querySelectorAll('span').forEach(span => {
+                span.style.animation = 'none';
+                setTimeout(() => {
+                    span.style.animation = ''; 
+                }, 10);
+            });
+        }
+    }
+});
+
+document.getElementById('animate-haste').addEventListener('mouseover', function() {
+    this.classList.add('activatable');
+});
+
+document.getElementById('animate-haste').addEventListener('click', function() {
+    this.classList.toggle('clicked');
+    if (this.classList.contains('clicked')) {
+        this.querySelectorAll('span').forEach(span => {
+            span.classList.add('animate');
+        });
+    } else {
+        this.querySelectorAll('span').forEach(span => {
+            span.classList.remove('animate');
+        });
+    }
+});
+</script>
+
 </body>
 </html>

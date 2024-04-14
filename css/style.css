@@ -14,6 +14,54 @@ body {
     font-family: 'Quattrocento', serif;
     scroll-behavior: smooth;
     background: linear-gradient(135deg, #f0eae0, #c8c1ba);
+    transition: background-color 0.5s ease;
+}
+
+.cover-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #394862, #f0eae0);
+    color: #253859;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.cover-page h1 {
+    font-family: 'Klee One', cursive;
+    font-size: 4em;
+    font-weight: bold;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+    margin-bottom: 0.5em;
+}
+
+.clickable-title {
+    font-family: 'Klee One', cursive;
+    font-size: 4em;
+    font-weight: bold;
+    color: #1b325b;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    animation: pulsateGlow 2s ease-in-out infinite;
+    text-align: center;
+}
+
+.cover-page p {
+    font-family: 'Quattrocento', serif;
+    font-size: 2em;
+    margin: 0.25em 0;
+}
+
+.cover-page .subheading {
+    font-family: 'Quattrocento', serif;
+    font-size: 1.5em;
+    font-style: italic;
+    opacity: 0.8;
 }
 
 .poem {
@@ -21,6 +69,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    scroll-margin-top: 20px;
 }
 
 .sentences {
@@ -36,8 +85,13 @@ body {
 }
 
 .sentences p {
-    transition: opacity 2s ease, transform 0.5s ease;
+    opacity: 0; 
+    transition: opacity 2s ease;
     margin-bottom: 80px;
+}
+
+.sentences:hover p {
+    opacity: 1; 
 }
 
 .sentences span {
@@ -68,27 +122,6 @@ body {
     transform: scale(5.5);
     display: inline-block;
     animation: shake 0.5s infinite;
-}
-
-.aw3 .h, .aw3 .a, .aw3 .s, .aw3 .t, .aw3 .e {
-    display: inline-block;
-    position: relative;
-    animation: trickleDown 3s forwards;
-    animation-delay: 2s;
-    animation-play-state: paused;
-}
-
-.aw3:hover .h, 
-.aw3:hover .a, 
-.aw3:hover .s, 
-.aw3:hover .t, 
-.aw3:hover .e {
-    animation-play-state: running; 
-    overflow: hidden;
-    position: relative;
-    transform: translateX(-100vw);
-    transition: transform 0.5s ease;
-    animation: slideIn 2s forwards; 
 }
 
 .aw4:hover {
@@ -133,7 +166,6 @@ body {
 }
 
 
-
 .aw1 span {
     font-family: 'Calligraffitti', cursive; 
     display: inline-block;
@@ -150,6 +182,70 @@ body {
     font-family: 'Faster One', cursive;
     display: inline-block;
 }
+
+.aw3 span {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    animation: trickleDown 3s forwards paused;
+}
+
+.aw3 .h, .aw3 .a, .aw3 .s, .aw3 .t, .aw3 .e {
+    display: inline-block;
+    position: relative;
+    animation: trickleDown 3s forwards;
+    animation-delay: 2s;
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+.aw3:hover .h, 
+.aw3:hover .a, 
+.aw3:hover .s, 
+.aw3:hover .t, 
+.aw3:hover .e {
+    animation-play-state: running; 
+    overflow: hidden;
+    position: relative;
+    transform: translateX(-100vw);
+    transition: transform 0.5s ease;
+    animation: slideIn 2s forwards; 
+}
+
+.aw3.clicked .h, 
+.aw3.clicked .a, 
+.aw3.clicked .s, 
+.aw3.clicked .t, 
+.aw3.clicked .e {
+    animation: pulsate 0.5s ease-in-out infinite alternate, sideToSide 0.5s ease-in-out infinite alternate !important;
+}
+
+.aw3:hover span {
+    animation-play-state: running; 
+    overflow: hidden;
+    transform: translateX(-100vw);
+    transition: transform 0.5s ease;
+    animation: slideIn 2s forwards; 
+}
+
+.aw3.clicked span {
+    animation: sideToSideDownward 0.5s ease-in-out forwards;
+}
+
+.aw3.activatable span {
+    cursor: pointer;
+    transition: color 0.5s ease;
+    color: #000; 
+}
+
+.aw3.activatable:hover span {
+    color: #ff4500;
+}
+
+.aw3.activatable.clicked span {
+    animation: sideToSideDownward 2s ease-in-out forwards;
+}
+
 .aw4, .aw8, .aw17 { font-family: 'Klee One', cursive; }
 .aw5 { 
     font-family: 'Swanky and Moo Moo', cursive; 
@@ -198,4 +294,26 @@ body {
 @keyframes glow {
     0%, 100% { text-shadow: 0 0 5px #394862, 0 0 10px #394862; }
     50% { text-shadow: 0 0 20px #8a9ba8, 0 0 30px #8a9ba8; }
+}
+
+@keyframes pulsateGlow {
+    0%, 100% {
+        text-shadow: 0 0 15px #fff, 0 0 30px #804c98, 0 0 45px #804c98, 0 0 60px #804c98;
+    }
+    50% {
+        text-shadow: 0 0 30px #fff, 0 0 45px #394e8e, 0 0 60px #394e8e, 0 0 75px #394e8e;
+    }
+}
+
+@keyframes pulsate {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes sideToSideDownward {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(10px, 50px); }
+    50% { transform: translate(-10px, 100px); }
+    75% { transform: translate(10px, 150px); }  
+    100% { transform: translate(0, 200px); }
 }
