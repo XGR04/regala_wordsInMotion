@@ -227,7 +227,9 @@ body {
     transition: transform 0.5s ease, color 0.5s ease 1.5s; 
 }
 
-.aw4, .aw8, .aw17 { font-family: 'Klee One', cursive; }
+.aw4 { font-family: 'Klee One', cursive; }
+.aw8
+.aw17 { font-family: 'Klee One', cursive; }
 .aw5 { 
     font-family: 'Swanky and Moo Moo', cursive; 
     display: inline-block;
