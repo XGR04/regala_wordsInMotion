@@ -94,14 +94,33 @@
             </p>
         </section>
         <section class="sentences" id="pt11">
-            <p>With all its <span class="aw18">sham</span></p>
-        </section>
+            <p>With all its <span class="aw18">
+                <span>s</span><span>h</span><span>a</span><span>m</span>
+            </span></p>
+        </section>        
         <section class="sentences" id="pt12">
-            <p><span class="aw19">drudgery</span></p>
+            <p>
+            <span class="aw19">
+                <span class="D">d</span>
+                <span class="R">r</span>
+                <span class="U">u</span>
+                <span class="D2">d</span>
+                <span class="G">g</span>
+                <span class="E">e</span>
+                <span class="R2">r</span>
+                <span class="Y">y</span>
+            </span>
+            </p>
         </section>
+        
         <section class="sentences" id="pt13">
-            <p>and<span class="aw20">broken dreams</span></p>
+            <p>and
+                <span class="aw20">
+                    <span class="bro">bro</span><span class="ken-dreams"><span class="ken">ken</span> dreams</span>
+                </span>
+            </p>
         </section>
+        
         <section class="sentences" id="pt14">
             <p>it is still a <span class="aw21">beautiful world</span>.</p>
         </section>
@@ -177,7 +196,7 @@ function scrollToNextSection(element) {
     }
 }
 
-document.querySelectorAll('.aw3, .aw5, .aw13, #pt8, .aw16').forEach(function(element) {
+document.querySelectorAll('.aw3, .aw5, .aw13, #pt8, .aw16, .aw17, .aw18, .aw19, .aw20').forEach(function(element) {
     element.addEventListener('click', function() {
         this.style.color = 'red';
         scrollToNextSection(this);
@@ -197,7 +216,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var aw21 = document.querySelector('.aw21');
+    
+    aw21.addEventListener('mouseenter', function() {
+        document.body.style.transition = 'background-color 1.5s ease';
+        document.body.style.background = 'linear-gradient(to right, #9db89e, #4a6583)';
+        this.style.animation = 'arcAndGrow 1.5s forwards';
+    });
+    
+    aw21.addEventListener('mouseleave', function() {
+        document.body.style.background = '';
+        this.style.transform = 'scale(1) rotate(0deg)';
+    });
 
+    aw21.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
 </script>
 
 </body>

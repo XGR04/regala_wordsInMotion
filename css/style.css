@@ -238,7 +238,6 @@ body {
 
 .aw5:hover {
     animation: flatline 5s ease-in-out ;
-    color: #b11919;
     text-shadow: 0 0 10px #b11919; 
 }
 
@@ -406,6 +405,9 @@ body {
     font-family: 'Klee One', cursive;
     display: inline-block; 
 }
+.aw17:hover {
+    text-shadow: 0 0 10px #b11919;
+}
 .aw17 span {
     display: inline-block; 
     transition: transform 0.3s ease; 
@@ -419,24 +421,65 @@ body {
 .aw17:hover span:nth-child(6) { animation: wave 0.6s infinite 0.5s; }
 
 
-.aw18 { font-family: 'Cabin Sketch', cursive; }
+.aw18 {
+    font-family: 'Cabin Sketch', cursive;
+    display: inline-block;
+    cursor: pointer; 
+}
 .aw18:hover {
-    transform: skewX(10deg) translateY(-10px);
-    transition: transform 0.5s ease;
+    text-shadow: 0 0 10px #b11919;
+}
+.aw18 span {
+    display: inline-block; 
+    transition: transform 0.3s ease-out, opacity 0.5s ease-out; 
+    position: relative; 
+}
+.aw18:hover span:nth-child(1) { 
+    transform: translate(-20px, -40px); 
+}
+.aw18:hover span:nth-child(2) { 
+    transform: translate(20px, -40px); 
+}
+.aw18:hover span:nth-child(3) { 
+    transform: translate(-20px, 40px); 
+}
+.aw18:hover span:nth-child(4) { 
+    transform: translate(20px, 40px); 
 }
 
-.aw19 { font-family: 'Impact', sans-serif; }
-.aw19:hover {
-    animation: pulse 1s infinite;
+.aw19 {
+    font-family: 'Impact', sans-serif;
+    display: inline-block;
 }
 
-.aw20 { font-family: 'Finger Paint', cursive; }
-.aw20:hover { font-family: 'Finger Paint', cursive; }
 
-.aw21 { font-family: 'Homemade Apple', cursive; }
-.aw21:hover {
-    transform: skewX(10deg);
-    transition: transform 0.5s ease;
+.aw20 {
+    font-family: 'Finger Paint', cursive;
+    display: inline-block; 
+    cursor: pointer; 
+    white-space: nowrap; 
+}
+.aw20:hover {
+    text-shadow: 0 0 10px #b11919; 
+}
+.aw20 span {
+    display: inline-block; 
+    transition: transform 0.5s ease-out; 
+    transform-origin: left bottom;
+}
+.aw20:hover .bro {
+    transform: translateX(-20px); 
+}
+.aw20:hover .ken-dreams {
+    transform: translateX(20px) rotate(15deg); 
+}
+
+.aw21 {
+    font-family: 'Homemade Apple', cursive;
+    cursor: pointer;
+    transition: transform 1.5s ease;
+    display: inline-block;
+    transform-origin: bottom center;
 }
 
 @keyframes spreadOut {
@@ -551,5 +594,14 @@ body {
     }
     50% {
         transform: translateY(-10px);
+    }
+}
+
+@keyframes arcAndGrow {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        transform: scale(2.5) rotate(-10deg);
     }
 }
