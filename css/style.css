@@ -320,7 +320,7 @@ body {
 }
 
 .aw15:hover span {
-    animation: depress 0.5s ease-in-out forwards;
+    animation: depress 1s ease-in-out forwards;
 }
 
 .aw15 span {
