@@ -316,13 +316,11 @@ body {
 
 .aw15 {
     display: inline-block;
-    font-family: 'Swanky and Moo Moo', cursive;
+    font-family: 'Finger Paint', cursive;
 }
-
 .aw15:hover span {
     animation: depress 1s ease-in-out forwards;
 }
-
 .aw15 span {
     display: inline-block;
     animation-duration: 0.5s;
@@ -330,7 +328,6 @@ body {
     animation-timing-function: ease-in-out;
     transform: translateY(0);
 }
-
 .aw15 span:nth-child(1) { animation-delay: 0s; }
 .aw15 span:nth-child(2) { animation-delay: 0.1s; }
 .aw15 span:nth-child(3) { animation-delay: 0.2s; }
@@ -339,17 +336,88 @@ body {
 .aw15 span:nth-child(6) { animation-delay: 0.5s; }
 
 
-
-.aw16 { font-family: 'Dokdo', cursive; }
+.aw16 {
+    font-family: 'Dokdo', cursive;
+}
+.aw16 span {
+    display: inline-block;
+    position: relative;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
 .aw16:hover {
-    transform: rotate(-5deg) scale(1.1);
-    transition: transform 0.5s ease;
+    text-shadow: 0 0 10px #b11919; 
 }
+.aw16:hover span:nth-child(1) { 
+    animation-name: step1; 
+    animation-delay: 0s;
+}
+.aw16:hover span:nth-child(2) { 
+    animation-name: step2; 
+    animation-delay: 0.1s;
+}
+.aw16:hover span:nth-child(3) { 
+    animation-name: step3;
+    animation-delay: 0.2s;
+}
+.aw16:hover span:nth-child(4) { 
+    animation-name: step4;
+    animation-delay: 0.3s;
 
-.aw17 { font-family: 'Klee One', cursive; }
-.aw17:hover {
-    animation: glow 1.5s ease-in-out infinite;
 }
+.aw16:hover span:nth-child(5) { 
+    animation-name: step5; 
+    animation-delay: 0.4s;
+}
+.aw16:hover span:nth-child(6) { 
+    animation-name: step6; 
+    animation-delay: 0.5s;
+}
+.aw16:hover span:nth-child(7) { 
+    animation-name: step7; 
+    animation-delay: 0.6s;
+}
+.aw16:hover span:nth-child(8) { 
+    animation-name: step8; 
+    animation-delay: 0.7s;
+}
+.aw16:hover span:nth-child(9) { 
+    animation-name: step9; 
+    animation-delay: 0.8s;
+}
+.aw16:hover span:nth-child(10) { 
+    animation-name: step10;
+    animation-delay: 0.9s;
+}
+@keyframes step1 { to { transform: translateY(10px); } }
+@keyframes step2 { to { transform: translateY(30px); } }
+@keyframes step3 { to { transform: translateY(50px); } }
+@keyframes step4 { to { transform: translateY(70px); } }
+@keyframes step5 { to { transform: translateY(90px); } }
+@keyframes step6 { to { transform: translateY(110px); } }
+@keyframes step7 { to { transform: translateY(130px); } }
+@keyframes step8 { to { transform: translateY(150px); } }
+@keyframes step9 { to { transform: translateY(170px); } }
+@keyframes step10 { to { transform: translateY(190px); } }
+
+
+.aw17 {
+    font-family: 'Klee One', cursive;
+    display: inline-block; 
+}
+.aw17 span {
+    display: inline-block; 
+    transition: transform 0.3s ease; 
+    transform-origin: bottom;
+}
+.aw17:hover span:nth-child(1) { animation: wave 0.6s infinite; }
+.aw17:hover span:nth-child(2) { animation: wave 0.6s infinite 0.1s; }
+.aw17:hover span:nth-child(3) { animation: wave 0.6s infinite 0.2s; }
+.aw17:hover span:nth-child(4) { animation: wave 0.6s infinite 0.3s; }
+.aw17:hover span:nth-child(5) { animation: wave 0.6s infinite 0.4s; }
+.aw17:hover span:nth-child(6) { animation: wave 0.6s infinite 0.5s; }
+
 
 .aw18 { font-family: 'Cabin Sketch', cursive; }
 .aw18:hover {
@@ -473,6 +541,15 @@ body {
         transform: translateY(0);
     }
     to {
-        transform: translateY(20px); /* Adjust this value for the desired depression effect */
+        transform: translateY(20px);
+    }
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
     }
 }
