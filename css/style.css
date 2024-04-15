@@ -435,22 +435,42 @@ body {
     position: relative; 
 }
 .aw18:hover span:nth-child(1) { 
-    transform: translate(-20px, -40px); 
+    transform: translate(-40px, -70px) scale(5); 
 }
 .aw18:hover span:nth-child(2) { 
-    transform: translate(20px, -40px); 
+    transform: translate(40px, -70px) scale(5); 
 }
 .aw18:hover span:nth-child(3) { 
-    transform: translate(-20px, 40px); 
+    transform: translate(-40px, 70px) scale(5);
 }
 .aw18:hover span:nth-child(4) { 
-    transform: translate(20px, 40px); 
+    transform: translate(40px, 70px) scale(5); 
 }
+
 
 .aw19 {
     font-family: 'Impact', sans-serif;
     display: inline-block;
 }
+.aw19 span {
+    display: inline-block;
+    opacity: 1;
+    transition: transform 0.5s ease-out, opacity 0.5s ease;
+    transform: translateY(-20px);
+}
+.aw19:hover span {
+    opacity: 1;
+    transform: translateY(0px) scale(2); /* Scale the text larger on hover */
+    text-shadow: 0 0 10px #b11919;
+}
+.aw19 .D { transition-delay: 0.1s; }
+.aw19 .R { transition-delay: 0.2s; }
+.aw19 .U { transition-delay: 0.3s; }
+.aw19 .D2 { transition-delay: 0.4s; }
+.aw19 .G { transition-delay: 0.5s; }
+.aw19 .E { transition-delay: 0.6s; }
+.aw19 .R2 { transition-delay: 0.7s; }
+.aw19 .Y { transition-delay: 0.8s; }
 
 
 .aw20 {
