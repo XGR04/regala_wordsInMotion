@@ -168,6 +168,7 @@ body {
     transform: translateX(-100vw);
     transition: transform 0.5s ease;
     animation: slideIn 2s forwards; 
+    text-shadow: 0 0 10px #b11919; 
 }
 
 .aw3.clicked .h, 
@@ -187,14 +188,14 @@ body {
 
 .aw4 {
     font-family: 'Klee One', cursive;
-    display: inline-block; /* Allows the span to be inline but styled */
-    cursor: pointer; /* Shows an interactive cursor on hover */
+    display: inline-block; 
+    cursor: pointer; 
 }
 
 .aw4 span {
     display: inline-block;
     position: relative;
-    transition: transform 0.5s ease, color 0.5s ease, text-shadow 0.5s ease; /* Smooth transitions for movement, color, and shadow */
+    transition: transform 0.5s ease, color 0.5s ease, text-shadow 0.5s ease; 
     color: black;
     text-shadow: none;
 }
@@ -237,7 +238,8 @@ body {
 
 .aw5:hover {
     animation: flatline 5s ease-in-out ;
-    color: #142b33;
+    color: #b11919;
+    text-shadow: 0 0 10px #b11919; 
 }
 
 .aw5 span:nth-child(1) { animation-delay: 0s; }
@@ -248,71 +250,118 @@ body {
 .aw5 span:nth-child(6) { animation-delay: 0.5s; }
 .aw5 span:nth-child(7) { animation-delay: 0.6s; }
 
-.aw6 { font-family: 'Impact', sans-serif; }
-
-.aw6:hover {
-    animation: pulse 1s infinite;
-}
-
-.aw7 {
-    font-family: 'Swanky and Moo Moo', cursive; 
-}
-
-.aw8 { font-family: 'Klee One', cursive; }
-.aw8:hover {
-    animation: glow 1.5s ease-in-out infinite;
-}
-.aw9 { font-family: 'Oswald', sans-serif; }
-.aw9:hover {
-    transform: scale(1.2);
-    transition: transform 0.5s ease;
-}
-
-.aw10 { font-family: 'Oswald', sans-serif; }
-.aw10:hover {
-    transform: scale(1.2);
-    transition: transform 0.5s ease;
-}
-
-.aw11 {
-    font-family: 'Cabin Sketch', cursive;
-}
 .aw12 {
-
-}
-.aw13 {
-
-}
-.aw13:hover {
-    transform: rotate(5deg);
-    transition: transform 0.5s ease;
+    font-family: 'Amatic SC', cursive;  
+    display: inline-block; 
+    vertical-align: baseline; 
+    transform-origin: bottom;  
 }
 
-.aw14 {
+.aw12:hover {
+    animation: flatline2 5s ease-in-out forwards; 
+}
 
+.aw13 span {
+    display: inline-block;
+    transition: transform 0.5s ease, opacity 0.5s ease; 
+    transform-origin: center;
+    cursor: pointer;
+    position: relative;
 }
-.aw15 { font-family: 'Finger Paint', cursive; }
-.aw15:hover {
-    animation: float 3s ease-in-out infinite;
+
+.aw13:hover span {
+    text-shadow: 0 0 10px #b11919; 
 }
+
+.aw13:hover span:nth-child(1) { 
+    transform: translateX(-80px) translateY(-40px) scale(1.8);
+}
+
+.aw13:hover span:nth-child(2) { 
+    transform: translateX(-60px) translateY(60px) scale(1.8);
+}
+
+.aw13:hover span:nth-child(3) { 
+    transform: translateX(40px) translateY(-80px) scale(1.8);
+}
+
+.aw13:hover span:nth-child(4) { 
+    transform: translateX(60px) translateY(80px) scale(1.8);
+}
+
+.aw13:hover span:nth-child(5) { 
+    transform: translateX(-40px) translateY(100px) scale(1.8);
+}
+
+.aw13:hover span:nth-child(6) { 
+    transform: translateX(80px) translateY(-60px) scale(1.8);
+}
+
+.aw13.active span {
+    transform: translateY(500px);  
+    opacity: 0;
+    transition: transform 2s ease-in, opacity 2s ease-out;
+}
+
+#pt8 span {
+    transition: transform 5s ease;
+    color: #c05050;
+}
+
+#pt8:hover span {
+    transform: scale(3); 
+    font-size: 120px; 
+    text-shadow: 0 0 10px #b11919; 
+}
+
+.aw15 {
+    display: inline-block;
+    font-family: 'Swanky and Moo Moo', cursive;
+}
+
+.aw15:hover span {
+    animation: depress 0.5s ease-in-out forwards;
+}
+
+.aw15 span {
+    display: inline-block;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    transform: translateY(0);
+}
+
+.aw15 span:nth-child(1) { animation-delay: 0s; }
+.aw15 span:nth-child(2) { animation-delay: 0.1s; }
+.aw15 span:nth-child(3) { animation-delay: 0.2s; }
+.aw15 span:nth-child(4) { animation-delay: 0.3s; }
+.aw15 span:nth-child(5) { animation-delay: 0.4s; }
+.aw15 span:nth-child(6) { animation-delay: 0.5s; }
+
+
+
 .aw16 { font-family: 'Dokdo', cursive; }
 .aw16:hover {
-    transform: rotate(-5deg);
+    transform: rotate(-5deg) scale(1.1);
     transition: transform 0.5s ease;
 }
+
 .aw17 { font-family: 'Klee One', cursive; }
 .aw17:hover {
     animation: glow 1.5s ease-in-out infinite;
 }
+
 .aw18 { font-family: 'Cabin Sketch', cursive; }
 .aw18:hover {
-    transform: skewX(10deg);
+    transform: skewX(10deg) translateY(-10px);
     transition: transform 0.5s ease;
 }
+
 .aw19 { font-family: 'Impact', sans-serif; }
 .aw19:hover {
     animation: pulse 1s infinite;
 }
+
 .aw20 { font-family: 'Finger Paint', cursive; }
 .aw20:hover { font-family: 'Finger Paint', cursive; }
 
@@ -320,11 +369,6 @@ body {
 .aw21:hover {
     transform: skewX(10deg);
     transition: transform 0.5s ease;
-}
-
-@keyframes speed {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-10px); }
 }
 
 @keyframes spreadOut {
@@ -337,11 +381,6 @@ body {
     10%, 30%, 50%, 70%, 90% { transform: translate(-5px, -5px) scale(5.5); }
     20%, 40%, 60%, 80% { transform: translate(5px, 5px) scale(1.1); }
 } 
-
-@keyframes slideIn {
-    from { transform: translateX(-100vw); }
-    to { transform: translateX(0); }
-}
 
 @keyframes pulse {
     0% { transform: scale(1); }
@@ -361,16 +400,11 @@ body {
 
 @keyframes pulsateGlow {
     0%, 100% {
-        text-shadow: 0 0 15px #fff, 0 0 30px #804c98, 0 0 45px #804c98, 0 0 60px #804c98;
+        text-shadow: 0 0 15px #fff, 0 0 30px #b11919, 0 0 45px #b11919, 0 0 60px #b11919;
     }
     50% {
         text-shadow: 0 0 30px #fff, 0 0 45px #394e8e, 0 0 60px #394e8e, 0 0 75px #394e8e;
     }
-}
-
-@keyframes pulsate {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
 }
 
 @keyframes sideToSideDownward {
@@ -391,7 +425,7 @@ body {
     }
     100% { 
         transform: translateX(0);
-        color: #804c98;
+        color: #b11919;
     }
 }
 
@@ -421,6 +455,24 @@ body {
         transform: scaleY(1);
     }
     50% {
-        transform: scaleY(6); /* Double height at the peak */
+        transform: scaleY(10);
+    }
+}
+
+@keyframes flatline2 {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(5);  
+    }
+}
+
+@keyframes depress {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(20px); /* Adjust this value for the desired depression effect */
     }
 }

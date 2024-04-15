@@ -65,22 +65,11 @@
                 </span>
             </p>
         </section>
-        <section class="sentences" id="pt3">
-            <p>As far as possible without surrender, be on good terms with <span class="aw6">all</span> persons.</p>
-        </section>
-        <section class="sentences" id="pt4">
-            <p>Speak your truth <span class="aw7">quietly</span> and <span class="aw8">clearly</span>,</p>
-            <p>and listen to others, even the <span class="aw9">dull</span> and <span class="aw10">ignorant</span>;</p>
-        </section>
-        <section class="sentences" id="pt5">
-            <p>they too have their story.</p>
-        </section>
-        <section class="sentences" id="pt6">
-            <p><span class="aw11">Avoid</span> loud and aggressive persons; they are vexatious to the spirit.</p>
-        </section>
         <section class="sentences" id="pt7">
-            <p>If you compare yourself with others, you may become <span class="aw12">vain</span> or <span class="aw13">bitter</span>, 
-                for always there will be greater and lesser persons than yourself…</p>
+            <p>If you compare yourself with others, you may become <span class="aw12">vain</span> or 
+            <span class="aw13">
+                <span>b</span><span>i</span><span>t</span><span>t</span><span>e</span><span>r</span>
+            </span>, for always there will be greater and lesser persons than yourself…</p>
         </section>
         <section class="sentences" id="pt8">
             <p><span class="aw14">Be yourself.</span></p>
@@ -142,7 +131,6 @@ document.getElementById('animate-haste').addEventListener('click', function() {
     }
 });
 
-// Function to smoothly scroll to the next section over a given duration
 function smoothScrollTo(element, duration) {
   const startPosition = window.pageYOffset;
   const endPosition = element.getBoundingClientRect().top + window.pageYOffset;
@@ -169,21 +157,33 @@ function smoothScrollTo(element, duration) {
   requestAnimationFrame(animation);
 }
 
-// Scroll to the next section
 function scrollToNextSection(element) {
     const nextSection = element.closest('.sentences').nextElementSibling;
     if (nextSection) {
-        smoothScrollTo(nextSection, 2000); // 2000ms = 2 seconds
+        smoothScrollTo(nextSection, 2000);
     }
 }
 
-// Add the click event listeners to .aw3 and .aw5
-document.querySelectorAll('.aw3, .aw5').forEach(function(element) {
+document.querySelectorAll('.aw3, .aw5, .aw13, #pt8').forEach(function(element) {
     element.addEventListener('click', function() {
-        this.style.color = 'red'; // Change color to red
+        this.style.color = 'red';
         scrollToNextSection(this);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('bitter').addEventListener('click', function() {
+        const spans = this.querySelectorAll('span');
+        spans.forEach((span, index) => {
+            setTimeout(() => {
+                span.style.transition = 'transform 2s ease, opacity 2s ease';
+                span.style.transform = 'translateY(500px)';
+                span.style.opacity = '0';
+            }, index * 100);
+        });
+    });
+});
+
 
 </script>
 
