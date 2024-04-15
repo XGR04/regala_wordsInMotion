@@ -460,7 +460,7 @@ body {
 }
 .aw19:hover span {
     opacity: 1;
-    transform: translateY(0px) scale(2); /* Scale the text larger on hover */
+    transform: translateY(0px) scale(2); 
     text-shadow: 0 0 10px #b11919;
 }
 .aw19 .D { transition-delay: 0.1s; }
