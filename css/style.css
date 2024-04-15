@@ -104,6 +104,13 @@ body {
     transform: translateY(-5px);
 }
 
+.aw1 span {
+    font-family: 'Calligraffitti', cursive; 
+    display: inline-block;
+    transform: translateY(0) scale(1);
+    transition: transform 0.3s ease;
+    margin: 0 4px;
+}
 
 .aw1:hover span {
     animation: spreadOut 2s ease forwards;
@@ -118,70 +125,21 @@ body {
 .aw1 span:nth-child(7) { animation-delay: 1.2s; }
 .aw1 span:nth-child(8) { animation-delay: 1.4s; }
 
+.aw2 { 
+    font-family: 'Bangers', cursive; 
+    transform: scale(5.5); 
+}
+
 .aw2:hover { 
     transform: scale(5.5);
     display: inline-block;
     animation: shake 0.5s infinite;
 }
 
-.aw4:hover {
-    transform-origin: bottom center;
-    animation: spreadOut 2s ease forwards;
-}
-.aw5:hover {
-    transition: transform 0.5s ease;
-    transform: scale(0.8);
-}
-
-.aw6:hover, .aw19:hover {
-    animation: pulse 1s infinite;
-}
-
-.aw8:hover, .aw17:hover {
-    animation: glow 1.5s ease-in-out infinite;
-}
-
-.aw9:hover, .aw10:hover {
-    transform: scale(1.2);
-    transition: transform 0.5s ease;
-}
-
-.aw13:hover {
-    transform: rotate(5deg);
-    transition: transform 0.5s ease;
-}
-
-.aw15:hover, .aw20:hover {
-    animation: float 3s ease-in-out infinite;
-}
-
-.aw16:hover {
-    transform: rotate(-5deg);
-    transition: transform 0.5s ease;
-}
-
-.aw18:hover, .aw21:hover {
-    transform: skewX(10deg);
-    transition: transform 0.5s ease;
-}
-
-
-.aw1 span {
-    font-family: 'Calligraffitti', cursive; 
-    display: inline-block;
-    transform: translateY(0) scale(1);
-    transition: transform 0.3s ease;
-    margin: 0 4px;
-}
-
-.aw2 { 
-    font-family: 'Bangers', cursive; 
-    transform: scale(5.5); 
-}
-
 .aw3 { 
     font-family: 'Faster One', cursive;
     display: inline-block;
+    cursor: pointer;
 }
 
 .aw3 span {
@@ -254,7 +212,7 @@ body {
 }
 
 .aw4:hover .a {
-    transform: translate(0, -40px);
+    transform: translate(0, -20px);
     color: #e5e568; 
     text-shadow: 0 0 10px #eaea9b; 
 }
@@ -271,19 +229,98 @@ body {
     text-shadow: 0 0 10px #eaea9b; 
 }
 
-.aw8
-.aw17 { font-family: 'Klee One', cursive; }
 .aw5 { 
     font-family: 'Swanky and Moo Moo', cursive; 
     display: inline-block;
+    cursor: pointer;
+} 
+
+.aw5:hover {
+    animation: flatline 5s ease-in-out ;
+    color: #142b33;
 }
 
-.aw6, .aw19 { font-family: 'Impact', sans-serif; }
-.aw9, .aw10, .aw13 { font-family: 'Oswald', sans-serif; }
-.aw15, .aw20 { font-family: 'Finger Paint', cursive; }
+.aw5 span:nth-child(1) { animation-delay: 0s; }
+.aw5 span:nth-child(2) { animation-delay: 0.1s; }
+.aw5 span:nth-child(3) { animation-delay: 0.2s; }
+.aw5 span:nth-child(4) { animation-delay: 0.3s; }
+.aw5 span:nth-child(5) { animation-delay: 0.4s; }
+.aw5 span:nth-child(6) { animation-delay: 0.5s; }
+.aw5 span:nth-child(7) { animation-delay: 0.6s; }
+
+.aw6 { font-family: 'Impact', sans-serif; }
+
+.aw6:hover {
+    animation: pulse 1s infinite;
+}
+
+.aw7 {
+    font-family: 'Swanky and Moo Moo', cursive; 
+}
+
+.aw8 { font-family: 'Klee One', cursive; }
+.aw8:hover {
+    animation: glow 1.5s ease-in-out infinite;
+}
+.aw9 { font-family: 'Oswald', sans-serif; }
+.aw9:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+.aw10 { font-family: 'Oswald', sans-serif; }
+.aw10:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+.aw11 {
+    font-family: 'Cabin Sketch', cursive;
+}
+.aw12 {
+
+}
+.aw13 {
+
+}
+.aw13:hover {
+    transform: rotate(5deg);
+    transition: transform 0.5s ease;
+}
+
+.aw14 {
+
+}
+.aw15 { font-family: 'Finger Paint', cursive; }
+.aw15:hover {
+    animation: float 3s ease-in-out infinite;
+}
 .aw16 { font-family: 'Dokdo', cursive; }
+.aw16:hover {
+    transform: rotate(-5deg);
+    transition: transform 0.5s ease;
+}
+.aw17 { font-family: 'Klee One', cursive; }
+.aw17:hover {
+    animation: glow 1.5s ease-in-out infinite;
+}
 .aw18 { font-family: 'Cabin Sketch', cursive; }
+.aw18:hover {
+    transform: skewX(10deg);
+    transition: transform 0.5s ease;
+}
+.aw19 { font-family: 'Impact', sans-serif; }
+.aw19:hover {
+    animation: pulse 1s infinite;
+}
+.aw20 { font-family: 'Finger Paint', cursive; }
+.aw20:hover { font-family: 'Finger Paint', cursive; }
+
 .aw21 { font-family: 'Homemade Apple', cursive; }
+.aw21:hover {
+    transform: skewX(10deg);
+    transition: transform 0.5s ease;
+}
 
 @keyframes speed {
     0%, 100% { transform: translateX(0); }
@@ -376,4 +413,14 @@ body {
 @keyframes moveE2 {
     from { transform: translate(0, 0); }
     to { transform: translate(60px, 20px); }
+}
+
+
+@keyframes flatline {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(6); /* Double height at the peak */
+    }
 }

@@ -53,7 +53,17 @@
                     <span class="e2">e</span>
                 </span>
             </p>
-            <p>there may be in <span class="aw5">silence</span>.</p>
+            <p>there may be in 
+                <span class="aw5">
+                    <span>s</span>
+                    <span>i</span>
+                    <span>l</span>
+                    <span>e</span>
+                    <span>n</span>
+                    <span>c</span>
+                    <span>e</span>
+                </span>
+            </p>
         </section>
         <section class="sentences" id="pt3">
             <p>As far as possible without surrender, be on good terms with <span class="aw6">all</span> persons.</p>
@@ -131,6 +141,50 @@ document.getElementById('animate-haste').addEventListener('click', function() {
         });
     }
 });
+
+// Function to smoothly scroll to the next section over a given duration
+function smoothScrollTo(element, duration) {
+  const startPosition = window.pageYOffset;
+  const endPosition = element.getBoundingClientRect().top + window.pageYOffset;
+  const distance = endPosition - startPosition;
+  let startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const nextScrollPosition = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+    window.scrollTo(0, nextScrollPosition);
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  function easeInOutQuad(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animation);
+}
+
+// Scroll to the next section
+function scrollToNextSection(element) {
+    const nextSection = element.closest('.sentences').nextElementSibling;
+    if (nextSection) {
+        smoothScrollTo(nextSection, 2000); // 2000ms = 2 seconds
+    }
+}
+
+// Add the click event listeners to .aw3 and .aw5
+document.querySelectorAll('.aw3, .aw5').forEach(function(element) {
+    element.addEventListener('click', function() {
+        this.style.color = 'red'; // Change color to red
+        scrollToNextSection(this);
+    });
+});
+
 </script>
 
 </body>
